@@ -1,4 +1,23 @@
 // ==========================================
+// Cookie Banner
+// ==========================================
+(function () {
+    var banner = document.getElementById('cookie-banner');
+    var acceptBtn = document.getElementById('cookie-accept');
+
+    if (banner && !localStorage.getItem('cookieAccepted')) {
+        banner.style.display = 'flex';
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+            localStorage.setItem('cookieAccepted', 'true');
+            banner.style.display = 'none';
+        });
+    }
+})();
+
+// ==========================================
 // Intro Animation
 // ==========================================
 (function () {
